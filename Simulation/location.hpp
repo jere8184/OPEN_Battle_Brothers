@@ -47,6 +47,5 @@ class Location
     std::set<Quest*> quests;
     std::set<Location*> sub_locations;
     Faction* faction;
-
     //Tile& postion;
 };

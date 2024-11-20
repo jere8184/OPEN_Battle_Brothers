@@ -26,6 +26,15 @@ struct Stat
     int current_value;
 };
 
+struct EnumClassHash
+{
+    template <typename T>
+    std::size_t operator()(T t) const
+    {
+        return static_cast<std::size_t>(t);
+    }
+};
 
-using Stats = std::unordered_map<E_Stat, Stat>;
-using Abilities = std::unordered_set<E_Ability>;
+
+using Stats = std::unordered_map<E_Stat, Stat, EnumClassHash>;
+using Abilities = std::unordered_set<E_Ability, EnumClassHash>;

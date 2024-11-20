@@ -17,7 +17,7 @@ class Item
 
     std::string name = "NOT_SET";
     std::string desc = "NOT_SET";
-    Sprite& inventory_icon;
+    Sprite* inventory_icon;
     int quantity;
 };
 

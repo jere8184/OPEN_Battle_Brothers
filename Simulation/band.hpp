@@ -46,7 +46,12 @@ class Band
 
     std::unordered_set<Charecter*> members;
     Diplomacy diplomacy;
-    Inventory<Item> inventory;
+    Inventory<Item*> inventory;
+    Faction* faction;
+
+    Band(std::string& name, Sprite* banner, Sprite* map_icon, Faction* faction, std::vector<Item*> starting_items, std::unordered_set<Charecter*> members);
+
+    int get_id();
 };
 
 

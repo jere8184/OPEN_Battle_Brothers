@@ -26,18 +26,21 @@ struct CharecterInventory
 
 class Charecter
 {
+private:
     int id;
     std::string name;
     const Faction* faction;
     CharecterInventory inventory;
 
-    Sprite& face_sprite;
-    Sprite& hair_sprite;
-    Sprite& scar_sprite;
-    Sprite& wounded_1_sprite;
-    Sprite& wounded_2_sprite;
-    Sprite& wounded_3_sprite;
-    Sprite& recovering_sprite;
+    Sprite* face_sprite;
+    Sprite* hair_sprite;
+    Sprite* scar_sprite;
+    Sprite* wounded_1_sprite;
+    Sprite* wounded_2_sprite;
+    Sprite* wounded_3_sprite;
+    Sprite* recovering_sprite;
+public:
+    Charecter(std::string name, Faction* faction, Sprite* face_sprite, Sprite* hair_sprite);
 };
 
 class Deployable_Charecter : Charecter
@@ -46,14 +49,14 @@ class Deployable_Charecter : Charecter
     {
         int days_left;
         std::string name;
-        Sprite& icon;
+        Sprite* icon;
         std::set<Stat> effects;
     };
 
     struct PermanentInjury
     {
         std::string name;
-        Sprite& icon;
+        Sprite* icon;
         std::set<Stat> effects;
     };
 
@@ -61,14 +64,14 @@ class Deployable_Charecter : Charecter
     {
         int turns_left;
         std::string name;
-        Sprite& icon;
+        Sprite* icon;
         std::set<Stat> effects;
     };
 
     struct Ability
     {
         std::string name;
-        Sprite& icon;
+        Sprite* icon;
         std::set<Stat> effects;
         Abilities abilites;
     };

@@ -6,14 +6,11 @@
 
 #include "location.hpp"
 #include "item.hpp"
+#include "band.hpp"
 
 
-class Charecter;
+class Location;
 class Band;
-
-
-
-
 
 struct QuestStep
 {
@@ -45,14 +42,14 @@ class Quest
     };
 
     int id;
-    Charecter& patreon;
-    Band& contractor;
+    Charecter* const patreon;
+    Band* const contractor;
 
     int reward_gold;
     std::set<Item*> reward_items;
 
     Difficulty diffculty;
 
-    std::set<Location&> locations;
+    std::set<Location*> locations;
     std::list<QuestStep> steps;
 };
