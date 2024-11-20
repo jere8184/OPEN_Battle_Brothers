@@ -30,6 +30,7 @@ enum class ReputationLevel
 
 class Band
 {
+private:
     int id;
     std::string name = "NOT_SET";
     const Sprite* banner;
@@ -48,10 +49,8 @@ class Band
     Diplomacy diplomacy;
     Inventory<Item*> inventory;
     Faction* faction;
-
+public:
     Band(std::string& name, Sprite* banner, Sprite* map_icon, Faction* faction, std::vector<Item*> starting_items, std::unordered_set<Charecter*> members);
-
-    int get_id();
 };
 
 
