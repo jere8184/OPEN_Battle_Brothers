@@ -8,6 +8,7 @@
 #include "inventory.hpp"
 #include "quest.hpp"
 #include "faction.hpp"
+#include "map.hpp"
 
 
 enum class Size
@@ -47,5 +48,5 @@ class Location
     std::set<Quest*> quests;
     std::set<Location*> sub_locations;
     Faction* faction;
-    //Tile& postion;
+    Coordinate location;
 };
